@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Cal.css">
+<title>CALCULATOR</title>
+</head>
+<body>
+<div class="calbox">
+    <div>
+        <input type="text" id="disp" placeholder="0">
+        <div>
+            <button class="operator" onclick="disp.value = ''">AC</button>
+            <button class="operator" onclick="functionsign()">+/-</button>
+            <button class="operator" onclick="disp.value += '/'">/</button>
+            <button class="operator" onclick="disp.value = disp.value.toString().slice(0,-1)">DEL</button>
+        </div>
+        <div>
+            <button onclick="disp.value += '7'">7</button>
+            <button onclick="disp.value += '8'">8</button>
+            <button onclick="disp.value += '9'">9</button>
+            <button class="operator" onclick="disp.value += '*'">*</button>
+        </div>
+        <div>
+            <button onclick="disp.value += '4'">4</button>
+            <button onclick="disp.value += '5'">5</button>
+            <button onclick="disp.value += '6'">6</button>
+            <button class="operator" onclick="disp.value += '-'">-</button>
+        </div>
+        <div>
+            <button onclick="disp.value += '1'">1</button>
+            <button onclick="disp.value += '2'">2</button>
+            <button onclick="disp.value += '3'">3</button>
+            <button class="operator" onclick="disp.value += '+'">+</button>
+        </div>
+        <div>
+            <button onclick="disp.value += '.'">.</button>
+            <button onclick="disp.value += '0'">0</button>
+            <button onclick="disp.value += '00'">00</button>
+            <button class="operator" onclick="functionequal()">=</button>
+        </div>
+    </div>
+</div>
+<script src="Cal.js"></script>
+</body>
+</html>

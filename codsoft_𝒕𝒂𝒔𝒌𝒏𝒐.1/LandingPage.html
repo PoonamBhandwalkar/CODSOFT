@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TripPlanner</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<style>
+body {
+    overflow-x: hidden;
+}
+.carousel-inner{
+    height: 270px;
+}
+.card img{
+    height: 300px;          
+}
+.card1 img{
+    height: 200px;
+}
+.carousel-item img{
+    height: 270px;
+}
+.carousel-indicators{
+    border-radius: 50%;
+}
+.navbar-nav{
+    padding-left: 15px;
+}
+.nav-item{
+    display: block;
+    padding-right: 20px;
+}
+.nav-item:hover{
+    background-color: green;
+    text-align: center;
+}
+.d-flex{
+    padding-right: 20px;
+}
+.d-grid gap-2 {
+    background-color: black;
+}
+</style>
+</head>
+
+<body>
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;">
+<div class="container-fluid">
+  <img src="/images/logo.png" alt="" width="55" height="40">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Hotels</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Restaurants</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+
+  <form class="d-flex">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+
+  <!-- Login button -->
+  <div class="d-grid gap-2">
+    <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" style="border-radius: 10px; margin-right: 10px;">Login</button>
+  </div>
+
+  <!-- Signup button -->
+  <div class="d-grid gap-2">
+    <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#signupModal" style="border-radius: 10px;">Signup</button>
+  </div>
+</div>
+</nav>
+
+<!-- carousel -->
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/images/australia.avif" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/images/europe.avif" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/images/idore.avif" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/images/sydney.avif" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/images/patan.avif" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<p style="margin: 18px;text-align: center;font-size: 28px;">What’s on your 2024 travel bucketlist?</p>
+
+<!-- gallery -->
+<div class="card-group" data-aos="fade-zoom-in">
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="card1" style="width: 100%;">
+        <img src="/images/eu.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 >Europe</h5>
+          <p><b>64</b> tours | <b>89</b> departures<br><b>65,961</b> guests travelled</p>
+          <a href="#" class="btn btn-primary">Show Tours</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2" >
+      <div class="card1" style="width: 100%;">
+        <img src="/images/jkwb.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5>Jammu & Kashmir</h5>
+          <p class="card-text"><b>5</b> tours | <b>17</b> departures<br><b>46,091</b> guests travelled</p>
+          <a href="#" class="btn btn-primary">Show Tours</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="card1" style="width: 100%;">
+        <img src="/images/klhl.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Kerala</h5>
+          <p class="card-text"><b>12</b> tours | <b>78</b> departures<br><b>37,076</b> guests travelled</p>
+          <a href="#" class="btn btn-primary">Show Tours</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="card1" style="width: 100%;">
+        <img src="/images/leh.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Leh Ladakh</h5>
+          <p class="card-text"><b>5</b> tours | <b>31</b> departures<br><b>22,891</b> guests travelled</p>
+          <a href="#" class="btn btn-primary">Show Tours</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="card1" style="width: 100%;">
+        <img src="/images/sikki.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Sikkim</h5>
+          <p class="card-text"><b>8</b> tours | <b>35</b> departures<br><b>20,331</b> guests travelled</p>
+          <a href="#" class="btn btn-primary">Show Tours</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="card1" style="width: 100%;">
+        <img src="/images/hp.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Himachal Pradesh</h5>
+          <p class="card-text"><b>15</b> tours | <b>57</b> departures<br><b>86,258</b> guests travelled</p>
+          <a href="#" class="btn btn-primary">Show Tours</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<!-- accordion -->
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Popular European Trails</button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="row ">
+          <div class="col-sm-4" >
+            <div class="card" style="width: 100%;">
+              <img src="/images/1.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">European Highlights</h5>
+                <p style="display:inline-block;"><img src="/images/loc.png" style="width:15px;height:20px;"> Travel <b>11</b> Days | <b>9</b> Countries | <b>18</b> Cities<img src="rarrow.png" style="width:12px;height:20px;margin-left: 80px;"></p>
+                <p style="display:inline-block;"><img src="/images/pass.png" style="width:15px;height:20px;"><b> 4</b> Departure Cities <b>11</b> Departure Dates<img src="rarrow.png" style="width:12px;height:20px;margin-left: 80px;"></p>
+                <a href="#" class="btn btn-outline-dark" style="margin-right: 10px;">Enquire Now</a>
+                <a href="#" class="btn btn-warning">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4" >
+            <div class="card" style="width: 100%;">
+              <img src="/images/2.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">European Explorer</h5>
+                <p style="display:inline-block;"><img src="/images/loc.png" style="width:15px;height:20px;"> Travel <b>14</b> Days | <b>9</b> Countries | <b>20</b> Cities<img src="rarrow.png" style="width:12px;height:20px;margin-left: 80px;"></p>
+                <p style="display:inline-block;"><img src="/images/pass.png" style="width:15px;height:20px;"><b> 2</b> Departure Cities <b>3</b> Departure Dates<img src="rarrow.png" style="width:12px;height:20px;margin-left: 88px;"></p>
+                <a href="#" class="btn btn-outline-dark" style="margin-right: 10px;">Enquire Now</a>
+                <a href="#" class="btn btn-warning">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4" >
+            <div class="card" style="width: 100%;">
+              <img src="/images/3.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">European Jewels with Versailles</h5>
+                <p style="display:inline-block;"><img src="/images/loc.png" style="width:15px;height:20px;"> Travel <b>15</b> Days | <b>10</b> Countries | <b>24</b> Cities<img src="rarrow.png" style="width:12px;height:20px;margin-left: 70px;"></p>
+                <p style="display:inline-block;"><img src="/images/pass.png" style="width:15px;height:20px;"><b> 2</b> Departure Cities <b>3</b> Departure Dates<img src="rarrow.png" style="width:12px;height:20px;margin-left: 88px;"></p>
+                <a href="#" class="btn btn-outline-dark" style="margin-right: 10px;">Enquire Now</a>
+                <a href="#" class="btn btn-warning">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Golden Combinations</button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="row ">
+          <div class="col-sm-4" >
+            <div class="card" style="width: 100%;">
+              <img src="/images/4.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Italy Swiss Paris London</h5>
+                <p style="display:inline-block;"><img src="/images/loc.png" style="width:15px;height:20px;"> Travel <b>9</b> Days | <b>4</b> Countries | <b>7</b> Cities<img src="rarrow.png" style="width:12px;height:20px;margin-left: 100px;"></p>
+                <p style="display:inline-block;"><img src="/images/pass.png" style="width:15px;height:20px;"><b> 2</b> Departure Cities <b>7</b> Departure Dates<img src="rarrow.png" style="width:12px;height:20px;margin-left: 88px;"></p>
+                <a href="#" class="btn btn-outline-dark" style="margin-right: 10px;">Enquire Now</a>
+                <a href="#" class="btn btn-warning">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4" >
+            <div class="card" style="width: 100%;">
+              <img src="/images/5.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Swiss Paris Amsterdam Brussels</h5>
+                <p style="display:inline-block;"><img src="/images/loc.png" style="width:15px;height:20px;"> Travel <b>11</b> Days | <b>7</b> Countries | <b>14</b> Cities<img src="rarrow.png" style="width:12px;height:20px;margin-left: 80px;"></p>
+                <p style="display:inline-block;"><img src="/images/pass.png" style="width:15px;height:20px;"><b> 2</b> Departure Cities <b>7</b> Departure Dates<img src="rarrow.png" style="width:12px;height:20px;margin-left: 88px;"></p>
+                <a href="#" class="btn btn-outline-dark" style="margin-right: 10px;">Enquire Now</a>
+                <a href="#" class="btn btn-warning">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4" >
+            <div class="card" style="width: 100%;">
+              <img src="/images/6.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Italy Austria Swiss Paris</h5>
+                <p style="display:inline-block;"><img src="/images/loc.png" style="width:15px;height:20px;"> Travel <b>14</b> Days | <b>7</b> Countries | <b>18</b> Cities<img src="rarrow.png" style="width:12px;height:20px;margin-left: 80px;"></p>
+                <p style="display:inline-block;"><img src="/images/pass.png" style="width:15px;height:20px;"><b> 2</b> Departure Cities <b>2</b> Departure Dates<img src="rarrow.png" style="width:12px;height:20px;margin-left: 88px;"></p>
+                <a href="#" class="btn btn-outline-dark" style="margin-right: 10px;">Enquire Now</a>
+                <a href="#" class="btn btn-warning">View Details</a>
+              </div>
+            </div>
+          </div>          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Splendid Scandinavia</button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="row">
+          <div class="col-sm-4" >
+            <div class="card" style="width: 100%;">
+              <img src="/images/7.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Scandinavia Northern Lights</h5>
+                <p style="display:inline-block;"><img src="/images/loc.png" style="width:15px;height:20px;"> Travel <b>9</b> Days<img src="rarrow.png" style="width:12px;height:20px;margin-left: 255px;"></p>
+                <p style="display:inline-block;"><img src="/images/pass.png" style="width:15px;height:20px;"><b> 2</b> Departure Cities <b>1</b> Departure Date<img src="rarrow.png" style="width:12px;height:20px;margin-left: 95px;"></p>
+                <a href="#" class="btn btn-outline-dark" style="margin-right: 10px;">Enquire Now</a>
+                <a href="#" class="btn btn-warning">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4" >
+            <div class="card" style="width: 100%;">
+              <img src="/images/8.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Scandinavia Midnight Sun</h5>
+                <p style="display:inline-block;"><img src="/images/loc.png" style="width:15px;height:20px;"> Travel <b>16</b> Days | <b>4</b> Countries | <b>15</b> Cities<img src="rarrow.png" style="width:12px;height:20px;margin-left: 80px;"></p>
+                <p style="display:inline-block;"><img src="/images/pass.png" style="width:15px;height:20px;"><b> 2</b> Departure Cities <b>1</b> Departure Date<img src="rarrow.png" style="width:12px;height:20px;margin-left: 95px;"></p>
+                <a href="#" class="btn btn-outline-dark" style="margin-right: 10px;">Enquire Now</a>
+                <a href="#" class="btn btn-warning">View Details</a>
+              </div>
+           </div>
+          </div>
+
+          <div class="col-sm-4" >
+            <div class="card" style="width: 100%;">
+              <img src="/images/9.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Scandinavia Iceland</h5>
+                <p style="display:inline-block;"><img src="/images/loc.png" style="width:15px;height:20px;"> Travel <b>14</b> Days | <b>4</b> Countries | <b>11</b> Cities<img src="rarrow.png" style="width:12px;height:20px;margin-left: 80px;"></p>
+                <p style="display:inline-block;"><img src="/images/pass.png" style="width:15px;height:20px;"><b> 2</b> Departure Cities <b>1</b> Departure Date<img src="rarrow.png" style="width:12px;height:20px;margin-left: 95px;"></p>
+                <a href="#" class="btn btn-outline-dark" style="margin-right: 10px;">Enquire Now</a>
+                <a href="#" class="btn btn-warning">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingFour">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        Central Eastern Europe</button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="row ">
+          <div class="col-sm-4" >
+            <div class="card" style="width: 100%;">
+              <img src="/images/10.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Vienna Prague Budapest</h5>
+                <p style="display:inline-block;"><img src="/images/loc.png" style="width:15px;height:20px;"> Travel <b>7</b> Days | <b>4</b> Countries | <b>5</b> Cities<img src="rarrow.png" style="width:12px;height:20px;margin-left: 95px;"></p>
+                <p style="display:inline-block;"><img src="/images/pass.png" style="width:15px;height:20px;"><b> 2</b> Departure Cities <b>2</b> Departure Dates<img src="rarrow.png" style="width:12px;height:20px;margin-left: 85px;"></p>
+                <a href="#" class="btn btn-outline-dark" style="margin-right: 10px;">Enquire Now</a>
+                <a href="#" class="btn btn-warning">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4" >
+            <div class="card" style="width: 100%;">
+              <img src="/images/12.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Best of Eastern Europe</h5>
+                <p style="display:inline-block;"><img src="/images/loc.png" style="width:15px;height:20px;"> Travel <b>11</b> Days | <b>7</b> Countries | <b>12</b> Cities<img src="rarrow.png" style="width:12px;height:20px;margin-left: 80px;"></p>
+                <p style="display:inline-block;"><img src="/images/pass.png" style="width:15px;height:20px;"><b> 3</b> Departure Cities <b>3</b> Departure Dates<img src="rarrow.png" style="width:12px;height:20px;margin-left: 88px;"></p>
+                <a href="#" class="btn btn-outline-dark" style="margin-right: 10px;">Enquire Now</a>
+                <a href="#" class="btn btn-warning">View Details</a>
+              </div>
+            </div>
+          </div> 
+
+          <div class="col-sm-4" >
+            <div class="card" style="width: 100%;">
+              <img src="/images/13.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Central Europe</h5>
+                <p style="display:inline-block;"><img src="/images/loc.png" style="width:15px;height:20px;"> Travel <b>15</b> Days | <b>8</b> Countries | <b>14</b> Cities<img src="rarrow.png" style="width:12px;height:20px;margin-left: 80px;"></p>
+                <p style="display:inline-block;"><img src="/images/pass.png" style="width:15px;height:20px;"><b> 2</b> Departure Cities <b>5</b> Departure Dates<img src="rarrow.png" style="width:12px;height:20px;margin-left: 88px;"></p>
+                <a href="#" class="btn btn-outline-dark" style="margin-right: 10px;">Enquire Now</a>
+                <a href="#" class="btn btn-warning">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-white mt-5">
+  <!-- Section: Social media -->
+  <section style="margin: 0 auto; width:100%;padding-left: 70px;margin-top: 20px;">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block" style="float:left;">
+      <p style="display: inline-block;"><img src="/images/building.png" style="width:15px;height:25px;"><span style="color: black;font-size: 18px;margin-left: 10px;">Our Offices</span></p>
+      <p>Located across the country,ready to
+      <br>assist in planning & booking your perfect 
+      <br>vacation.
+      </p>
+      <a href="https://www.google.com/maps/" target="_blank"><span style="color: navy;font-size: 15px;">Locate Us</span></a>
+    </div>
+
+    <div class="me-5 d-none d-lg-block" style="float:left;">
+      <p style="display: inline-block;"><img src="/images/building.png" style="width:15px;height:25px;"><span style="color: black;font-size: 18px;margin-left: 10px;">Call us</span></p>
+      <p>Request a quote,or just chat about your
+      <br>next vacation. We're always happy to 
+      <br>help!
+      </p>
+      <span style="color: navy;font-size: 15px;">1800 22 7979</span>
+    </div>
+
+    <div class="me-5 d-none d-lg-block" style="float:left;">
+      <p style="display: inline-block;"><img src="/images/building.png" style="width:15px;height:25px;"><span style="color: black;font-size: 18px;margin-left: 10px;">Write to us</span></p>
+      <p>Be it an enquiry, feedback or a simple
+      <br>suggestion, write to us.
+      </p>
+      <a href="mailto:travel@tripplanner.com" target="_blank"><div style="color: navy;font-size: 15px;margin-top: 40px;">travel@tripplanner.com</div></a>
+    </div>
+
+    <div class="me-5 d-none d-lg-block" style="float:left;">
+      <p style="display: inline-block;"><img src="/images/building.png" style="width:15px;height:25px;"><span style="color: black;font-size: 18px;margin-left: 10px;">Connect with us</span></p>
+      <p>Check out reviews, podcasts, blogs
+      <br>and more...
+      </p>
+      <div>
+        <a href="https://www.facebook.com" class="me-4 link-secondary">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 link-secondary">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 link-secondary">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 link-secondary">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 link-secondary">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+  
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </section>
+  
+  <!-- Section: Links  -->
+  <section class="" style="background-color: black;">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" style="margin-top: 30px;">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4" style="margin-left: -15px;">
+          <i class="fas fa-gem me-3 text-secondary"></i>TripPlanner
+          </h6>
+          <p>
+            With the idea to create a world of affordable tourism and to explore 
+            as well as innovate new avenues in the travel industry, we set out on 
+            a journey to achieve ‘Our Lakshya - Bharat Ki Sabse Behtareen Travel 
+            Company’, a feat we are strongly working towards everyday…
+          </p>
+        </div>
+  
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" style="margin-top: 30px;">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Discover us</h6>
+          <p><a href="#!" class="text-reset">About Us</a></p>
+          <p><a href="#!" class="text-reset">Our Team</a></p>
+          <p><a href="#!" class="text-reset">Career</a></p>
+          <p><a href="#!" class="text-reset">Video Blogs</a></p>
+        </div>
+  
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" style="margin-top: 30px;">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+          <p><a href="#!" class="text-reset">How To Book</a></p>
+          <p><a href="#!" class="text-reset">FAQ</a></p>
+          <p><a href="#!" class="text-reset">Contact Us</a></p>
+          <p><a href="#!" class="text-reset">Help</a></p>
+        </div>
+  
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="margin-top: 30px;">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4" style="margin-left: 15px;">Head Office</h6>
+          <p><i class="fas fa-home me-3 text-secondary"></i> Bengaluru-560 001, Karnataka</p>
+          <p><i class="fas fa-envelope me-3 text-secondary"></i>info@tripplanner.com</p>
+          <p><i class="fas fa-phone me-3 text-secondary"></i> + 080 321 567 88</p>
+          <p><i class="fas fa-print me-3 text-secondary"></i> + 080 234 567 89</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">© 2024 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">TripPlanner.com</a>
+  </div>
+</footer>
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Login Form</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">    
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>
